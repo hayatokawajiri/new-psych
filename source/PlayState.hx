@@ -3482,6 +3482,12 @@ class PlayState extends MusicBeatState
 					note.destroy();
 				}
 				return;
+	        case 'Heal Note':
+	            health += 1.0;
+	            FlxG.sound.play(Paths.sound('LolSusGood'));
+						if(boyfriend.animation.getByName('hey') != null) {
+							boyfriend.playAnim('hey', true);
+							boyfriend.specialAnim = true;
 			}
 
 			if (!note.isSustainNote)
